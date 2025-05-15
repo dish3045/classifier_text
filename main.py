@@ -35,8 +35,8 @@ person = input("\nEnter the person's name to analyze: ")
 person_msgs = extract_messages_by_person(chat_data, person)
 
 if person_msgs:
-    print(f"\n💬 Messages from {person}:\n", person_msgs)
+    print(f"Messages from {person}:\n", person_msgs)
     emotion = detect_emotion(person_msgs)
-    print(f"\n🧠 Detected Emotion for {person}: {emotion}")
+    print(f"\nDetected Emotion for {person}: {emotion}")
 else:
-    print(f"\n⚠️ No messages found for '{person}' in the file.")
+    print(f"\nNo messages found for '{person}' in the file.")
