@@ -40,15 +40,3 @@ if person_msgs:
     print(f"\n🧠 Detected Emotion for {person}: {emotion}")
 else:
     print(f"\n⚠️ No messages found for '{person}' in the file.")
-
-# input_text = input("please enter your message:")
-
-# prompt = f"What is the emotional state of the person who said: \"{input_text}\"?"
-
-# inputs = tokenizer(prompt, return_tensors="pt")
-
-# with torch.no_grad():
-#     outputs = model.generate(inputs["input_ids"], max_length=50)
-#     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-# print("Response:", response)
