@@ -1,0 +1,7 @@
+[
+  {"sender": "Alice", "text": "I don't think I can make it today."},
+  {"sender": "Bob", "text": "Oh no, why?"},
+  {"sender": "Alice", "text": "I'm feeling really down and tired lately."},
+  {"sender": "Bob", "text": "I'm sorry to hear that. Want to talk?"},
+  {"sender": "Alice", "text": "Maybe later. Just feeling a bit lost."}
+]

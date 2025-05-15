@@ -1,18 +1,54 @@
 import torch
+import json
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-model_name = "Tianlin668/MentalT5"
 
-## going to download and keep locally for faster access
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+def extract_messages_by_person(data, person_name):
+    return [entry["text"] for entry in data if entry["sender"].lower() == person_name.lower()]
 
-## going to replace with an image reader to read text messages
-input_text = input("please enter your message:")
-inputs = tokenizer(input_text, return_tensors="pt")
+def detect_emotion(messages):
+    combined_text = " ".join(messages)
+    prompt = f"What is the emotional state of the person who said: \"{combined_text}\"?"
 
-with torch.no_grad():
-    outputs = model.generate(inputs["input_ids"], max_length=50)
-    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    inputs = tokenizer(prompt, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model.generate(inputs["input_ids"], max_length=50)
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-print("Response:", response)
+model_path = "./models"
+
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
+
+json_path = input("Enter path to the JSON file with messages: ")
+
+with open(json_path, "r", encoding="utf-8") as f:
+    chat_data = json.load(f)
+
+senders = sorted(set(entry["sender"] for entry in chat_data))
+print("\n👥 Available senders in the chat:")
+for sender in senders:
+    print("-", sender)
+
+person = input("\nEnter the person's name to analyze: ")
+
+person_msgs = extract_messages_by_person(chat_data, person)
+
+if person_msgs:
+    print(f"\n💬 Messages from {person}:\n", person_msgs)
+    emotion = detect_emotion(person_msgs)
+    print(f"\n🧠 Detected Emotion for {person}: {emotion}")
+else:
+    print(f"\n⚠️ No messages found for '{person}' in the file.")
+
+# input_text = input("please enter your message:")
+
+# prompt = f"What is the emotional state of the person who said: \"{input_text}\"?"
+
+# inputs = tokenizer(prompt, return_tensors="pt")
+
+# with torch.no_grad():
+#     outputs = model.generate(inputs["input_ids"], max_length=50)
+#     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+# print("Response:", response)

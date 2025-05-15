@@ -1,0 +1,6 @@
+[
+  {"sender": "Alice", "text": "Hey, how are you?"},
+  {"sender": "Bob", "text": "I'm doing fine, just tired."},
+  {"sender": "Alice", "text": "You sure you're okay?"},
+  {"sender": "Bob", "text": "Honestly, not really."}
+]

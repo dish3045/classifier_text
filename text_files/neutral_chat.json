@@ -1,0 +1,7 @@
+[
+  {"sender": "Alice", "text": "Are you coming to the meeting tomorrow?"},
+  {"sender": "Bob", "text": "Yes, I will be there at 10 AM."},
+  {"sender": "Alice", "text": "Great, we will discuss the new project."},
+  {"sender": "Bob", "text": "Sounds good. See you then."},
+  {"sender": "Alice", "text": "Thanks, bye."}
+]

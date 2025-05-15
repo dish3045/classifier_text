@@ -12,7 +12,6 @@ RUN pip install transformers protobuf sentencepiece
 
 COPY . .
 
-# Force transformers and torch to use CPU by default
 ENV CUDA_VISIBLE_DEVICES=""
 
 CMD ["python", "main.py"]

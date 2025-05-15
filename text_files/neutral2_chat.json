@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "Charlie",
+    "text": "Did you finish the report?"
+  },
+  {
+    "sender": "Dana",
+    "text": "Yes, I sent it this morning."
+  },
+  {
+    "sender": "Charlie",
+    "text": "Thanks for the update."
+  },
+  {
+    "sender": "Dana",
+    "text": "No problem, let me know if you need anything else."
+  },
+  {
+    "sender": "Charlie",
+    "text": "Will do."
+  }
+]

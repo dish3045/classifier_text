@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "Charlie",
+    "text": "I failed my exam today."
+  },
+  {
+    "sender": "Dana",
+    "text": "I'm sorry to hear that."
+  },
+  {
+    "sender": "Charlie",
+    "text": "I feel so disappointed and upset."
+  },
+  {
+    "sender": "Dana",
+    "text": "You'll do better next time."
+  },
+  {
+    "sender": "Charlie",
+    "text": "I hope so... feeling a bit hopeless now."
+  }
+]

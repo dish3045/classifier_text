@@ -4,3 +4,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    volumes:
+      - ./models:/app/models
+      - ./text_files:/app/text_files
